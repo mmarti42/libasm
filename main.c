@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 #include "libasm.h"
 #include <ctype.h>
-#include <stdlib.h>
 #include <unistd.h>
 
 void	tests_strlen()
@@ -36,6 +36,8 @@ void tests_memset()
 		fprintf(stderr, "ft_memset: error: %s != %s\n", s1, s2);
 		exit(1);
 	}
+	free(s1);
+	free(s2);
 }
 
 void tests_bzero()
@@ -51,8 +53,17 @@ void tests_memcpy()
 {
 	char s1[5] = "12345";
 	char s2[5] = {0};
-
+	
 	assert(!memcmp(ft_memcpy(s2, s1, 5), s1, 5));
+}
+
+void tests_strdup()
+{
+	char s1[5] = "12345";
+	
+	char *s2 = ft_strdup(s1);
+	assert(!memcmp(s2, s1, 5));
+	free(s2);
 }
 
 int main()
@@ -62,6 +73,7 @@ int main()
 	tests_memset();
 	tests_bzero();
 	tests_memcpy();
+	tests_strdup();
 	printf("All tests passed!\n");
 	return 0;
 }
