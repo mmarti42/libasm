@@ -6,7 +6,7 @@
 #    By: mmarti <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 15:43:06 by mmarti            #+#    #+#              #
-#    Updated: 2020/08/14 17:57:01 by mmarti           ###   ########.fr        #
+#    Updated: 2020/08/14 18:08:41 by mmarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ NAME = libasm.a
 
 TEST_NAME = libasm
 
-SRC = ft_isdigit.s ft_strlen.s
+SRC = ft_isdigit.s ft_strlen.s ft_memset.s
 
-MAIN = main.c
+CC = gcc -Wall -Wextra -Werror
 
 OBJ = $(SRC:.s=.o)
 
-all: $(NAME) $(test)
+all: $(NAME) $(TEST_NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
@@ -32,8 +32,8 @@ $(NAME): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 
-test: $(NAME) main.c
-	gcc -Wall -Wextra -Werror main.c $(NAME) -o $(TEST_NAME)
+$(TEST_NAME): main.c
+	$(CC) main.c $(NAME) -o $(TEST_NAME)
 
 fclean: clean
 	rm -rf $(NAME) $(TEST_NAME)
