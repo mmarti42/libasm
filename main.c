@@ -32,7 +32,7 @@ void tests_memset()
 	char *s2 = malloc(5);
 	int sym = 48;
 
-	if (memcmp(memset(s1, sym, 5), memset(s2, sym, 5), 5) != 0) {
+	if (memcmp(ft_memset(s1, sym, 5), memset(s2, sym, 5), 5) != 0) {
 		fprintf(stderr, "error: %s != %s\n", s1, s2);
 		exit(1);
 	}
