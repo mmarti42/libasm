@@ -6,7 +6,7 @@
 #    By: mmarti <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/14 15:43:06 by mmarti            #+#    #+#              #
-#    Updated: 2020/08/14 18:08:41 by mmarti           ###   ########.fr        #
+#    Updated: 2020/08/14 18:37:27 by mmarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = libasm.a
 
 TEST_NAME = libasm
 
-SRC = ft_isdigit.s ft_strlen.s ft_memset.s
+SRC = ft_isdigit.s ft_strlen.s ft_memset.s ft_bzero.s \
+	  ft_memcpy.s
 
 CC = gcc -Wall -Wextra -Werror
 

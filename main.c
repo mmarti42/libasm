@@ -33,9 +33,26 @@ void tests_memset()
 	int sym = 48;
 
 	if (memcmp(ft_memset(s1, sym, 5), memset(s2, sym, 5), 5) != 0) {
-		fprintf(stderr, "error: %s != %s\n", s1, s2);
+		fprintf(stderr, "ft_memset: error: %s != %s\n", s1, s2);
 		exit(1);
 	}
+}
+
+void tests_bzero()
+{
+	char s1[5] = {0};
+	char s2[5] = "1234";
+	
+	ft_bzero(s2, 5);
+	assert(!memcmp(s2, s1, 5));
+}
+
+void tests_memcpy()
+{
+	char s1[5] = "12345";
+	char s2[5] = {0};
+
+	assert(!memcmp(ft_memcpy(s2, s1, 5), s1, 5));
 }
 
 int main()
@@ -43,6 +60,8 @@ int main()
 	tests_strlen();
 	tests_isdigit();
 	tests_memset();
+	tests_bzero();
+	tests_memcpy();
 	printf("All tests passed!\n");
 	return 0;
 }
