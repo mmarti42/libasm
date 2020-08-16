@@ -26,5 +26,4 @@ write_file:
     pop rdi
     cmp rax, BUF_SIZE
     je _ft_cat
-    leave
     ret
