@@ -7,10 +7,10 @@ _ft_memset:
 loop:
 	cmp rdx, 0
 	je finish
-	mov [rdi], rsi
+	mov [rdi], sil
 	inc rdi
 	dec rdx
 	jmp loop
 
 finish:
-	ret		
+	ret

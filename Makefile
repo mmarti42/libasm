@@ -1,21 +1,9 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mmarti <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/08/14 15:43:06 by mmarti            #+#    #+#              #
-#    Updated: 2020/08/14 19:35:12 by mmarti           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libasm.a
 
 TEST_NAME = libasm
 
 SRC = ft_isdigit.s ft_strlen.s ft_memset.s ft_bzero.s \
-	  ft_memcpy.s ft_strdup.s
+		  ft_memcpy.s ft_strdup.s ft_strcat.s
 
 CC = gcc
 
@@ -33,8 +21,8 @@ $(NAME): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 
-$(TEST_NAME): main.c
-	$(CC) main.c $(NAME) -o $(TEST_NAME)
+$(TEST_NAME): $(OBJ) main.c
+	$(CC) main.c -g $(NAME) -o $(TEST_NAME)
 
 fclean: clean
 	rm -rf $(NAME) $(TEST_NAME)

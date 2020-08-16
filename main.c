@@ -43,7 +43,7 @@ void tests_memset()
 void tests_bzero()
 {
 	char s1[5] = {0};
-	char s2[5] = "1234";
+	char s2[5] = "12345";
 	
 	ft_bzero(s2, 5);
 	assert(!memcmp(s2, s1, 5));
@@ -66,6 +66,14 @@ void tests_strdup()
 	free(s2);
 }
 
+void tests_strcat()
+{
+	char a[9] = "1234\0";
+	char b[5] = "5678\0";
+	
+	assert(!memcmp(ft_strcat(a, b), a, 9));
+}
+
 int main()
 {
 	tests_strlen();
@@ -74,6 +82,7 @@ int main()
 	tests_bzero();
 	tests_memcpy();
 	tests_strdup();
+	tests_strcat();
 	printf("All tests passed!\n");
 	return 0;
 }
