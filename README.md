@@ -1,6 +1,6 @@
 # libasm
 
-Write the following functions in x64 assembly (in the Intel syntax):
+Write the following functions in x64 assembly (in the Intel syntax) using macho64 format:
 
 ```C
 size_t	ft_strlen(const char *s);
