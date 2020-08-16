@@ -4,6 +4,7 @@
 #include "libasm.h"
 #include <ctype.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 void	tests_strlen()
 {
@@ -74,6 +75,15 @@ void tests_strcat()
 	assert(!memcmp(ft_strcat(a, b), a, 9));
 }
 
+void tests_cat()
+{
+	int fd = open("Makefile", O_RDONLY);
+
+	ft_cat(fd);
+	//perror("err: ");
+	close(fd);
+}
+
 int main()
 {
 	tests_strlen();
@@ -83,6 +93,7 @@ int main()
 	tests_memcpy();
 	tests_strdup();
 	tests_strcat();
+	tests_cat();
 	printf("All tests passed!\n");
 	return 0;
 }

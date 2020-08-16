@@ -3,7 +3,7 @@ NAME = libasm.a
 TEST_NAME = libasm
 
 SRC = ft_isdigit.s ft_strlen.s ft_memset.s ft_bzero.s \
-		  ft_memcpy.s ft_strdup.s ft_strcat.s
+		  ft_memcpy.s ft_strdup.s ft_strcat.s ft_cat.s
 
 CC = gcc
 
