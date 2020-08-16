@@ -5,6 +5,9 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <fcntl.h>
+/*
+** few tests. 
+*/
 
 void	tests_strlen()
 {
@@ -80,7 +83,6 @@ void tests_cat()
 	int fd = open("Makefile", O_RDONLY);
 
 	ft_cat(fd);
-	//perror("err: ");
 	close(fd);
 }
 
